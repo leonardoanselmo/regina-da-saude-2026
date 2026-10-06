@@ -1,0 +1,448 @@
+<title>Regina da Saúde 20123 em 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f6f3;--paper:#ffffff;--ink:#16202a;--ink2:#4a5561;--muted:#7a848e;--line:#dfe3e0;--track:#eceeea;
+  --accent:#1f56c4;--accent-soft:#e3ebfa;--accent-ink:#163f91;--gray-bar:#b7bec4;
+  --up:#2a78d6;--down:#d6553f;--mid:#cfd3d0;
+  --m0:#eceeea;--m1:#d4e2f6;--m2:#9fc0ec;--m3:#5f95db;--m4:#2c66c4;--m5:#143f8a;
+  --warn-bg:#fdf3dc;--warn-ink:#7a5208;--warn-line:#ecd29a;--ca:#d9622b;
+  --g1:#c9dbf5;--g2:#86ade6;--g3:#3f78d0;--g4:#173f8c;--r1:#f6d3c8;--r2:#eb9d84;--r3:#d6553f;--r4:#97291a;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#11161b;--paper:#182027;--ink:#eef1f3;--ink2:#b9c2ca;--muted:#8a949d;--line:#2a343d;--track:#222b33;
+  --accent:#5b93ee;--accent-soft:#1c2c45;--accent-ink:#a9c6f7;--gray-bar:#56616b;
+  --up:#4b92ec;--down:#e8735f;--mid:#3a444d;
+  --m0:#222b33;--m1:#1d3354;--m2:#21477e;--m3:#2f64b0;--m4:#5590e3;--m5:#9cc0f5;
+  --warn-bg:#352a12;--warn-ink:#f1d28f;--warn-line:#5e4a1d;--ca:#ef7d47;
+  --g1:#1d3354;--g2:#2f5a9c;--g3:#5590e3;--g4:#a9c8f7;--r1:#4a2018;--r2:#8a3424;--r3:#d6553f;--r4:#f29a83;}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#11161b;--paper:#182027;--ink:#eef1f3;--ink2:#b9c2ca;--muted:#8a949d;--line:#2a343d;--track:#222b33;
+  --accent:#5b93ee;--accent-soft:#1c2c45;--accent-ink:#a9c6f7;--gray-bar:#56616b;
+  --up:#4b92ec;--down:#e8735f;--mid:#3a444d;
+  --m0:#222b33;--m1:#1d3354;--m2:#21477e;--m3:#2f64b0;--m4:#5590e3;--m5:#9cc0f5;
+  --warn-bg:#352a12;--warn-ink:#f1d28f;--warn-line:#5e4a1d;--ca:#ef7d47;
+  --g1:#1d3354;--g2:#2f5a9c;--g3:#5590e3;--g4:#a9c8f7;--r1:#4a2018;--r2:#8a3424;--r3:#d6553f;--r4:#f29a83;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;padding-inline:20px;padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+header{padding-top:40px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-stretch:78%;font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 .num{color:var(--accent)}
+h2{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:26px;line-height:1.15;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-stretch:90%;font-weight:600;font-size:17px;margin:0}
+p{margin:0;max-width:68ch}
+.lede{font-size:17px;color:var(--ink2)}
+.warn{background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line);border-radius:8px;padding:10px 14px;font-size:13.5px;max-width:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.kpi{background:var(--paper);padding:16px 18px;display:flex;flex-direction:column;gap:2px}
+.kpi b{font-family:var(--display);font-stretch:80%;font-weight:700;font-size:32px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--ink2)}
+.kpi small{font-size:12px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:16px}
+.sec-head{display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--ink);padding-top:14px}
+.sec-head .eyebrow{color:var(--accent)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;border:0;background:var(--paper);color:var(--ink2);padding:6px 12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
+button:focus-visible,th button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bars{display:flex;flex-direction:column;gap:3px}
+.bar{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:10px;align-items:center;font-size:13px}
+.bar .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink2)}
+.bar .tr{position:relative;height:18px;display:flex;align-items:center;gap:6px}
+.bar .fill{height:14px;background:var(--accent);border-radius:0 3px 3px 0;min-width:3px}
+.bar.dim .fill{background:var(--gray-bar)}
+.bar.hl .lb{color:var(--ink);font-weight:600}
+.bar .v{font-family:var(--mono);font-size:12px;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar .v i{font-style:normal;color:var(--muted)}
+.axis{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:10px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.axis div{position:relative;height:14px}
+.axis span{position:absolute;transform:translateX(-50%)}
+.note{font-size:12.5px;color:var(--muted)}
+#map{width:100%;position:relative}
+#map svg{width:100%;height:auto;display:block}
+#map path{stroke:var(--paper);stroke-width:.6;cursor:pointer}
+#map path:hover{stroke:var(--ink);stroke-width:1.4}
+.b0{fill:var(--m0)}.b1{fill:var(--m1)}.b2{fill:var(--m2)}.b3{fill:var(--m3)}.b4{fill:var(--m4)}.b5{fill:var(--m5)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:10px;border-radius:2px;display:inline-block}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-115%);opacity:0;transition:opacity .1s}
+.tip b{font-weight:600}
+.dumb{display:flex;flex-direction:column;gap:2px}
+.dr{display:grid;grid-template-columns:minmax(110px,170px) 1fr 74px;gap:10px;align-items:center;font-size:13px;height:22px}
+.dr .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink2)}
+.dr .tr{position:relative;height:100%}
+.dr .ln{position:absolute;top:50%;height:2px;margin-top:-1px;background:var(--mid)}
+.dr .dot{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--paper)}
+.dr .d22{background:var(--gray-bar)}.dr .d26{background:var(--accent)}
+.dr .dl{font-family:var(--mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--up)}.neg{color:var(--down)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+th,td{padding:7px 12px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--ink2);background:var(--paper);position:sticky;top:0}
+th button{all:unset;cursor:pointer}
+th button::after{content:" ↕";color:var(--muted);font-size:11px}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+table.resp{min-width:0;font-size:12.5px}
+.resp th,.resp td{padding:6px 8px;vertical-align:top}
+.resp td.n{white-space:nowrap}
+.resp th{white-space:normal;line-height:1.3}
+.resp .chip{font-size:11.5px;padding:1px 8px;white-space:normal}
+@media (max-width:900px){
+  .resp thead{display:none}
+  table.resp,.resp tbody,.resp tr,.resp td{display:block;width:100%}
+  .resp tr{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px;padding:10px 12px;border-bottom:1px solid var(--line)}
+  .resp td{border:0;padding:0;text-align:left!important;white-space:normal}
+  .resp td::before{content:attr(data-l);display:block;font-family:var(--body);font-size:11px;color:var(--muted)}
+  .resp td.w{grid-column:1/-1}
+}
+.duo{display:grid;grid-template-columns:minmax(110px,180px) 1fr 1fr;gap:4px 14px;align-items:center;font-size:13px}
+.duo .hd{font-size:12px;color:var(--ink2);font-weight:600}
+.duo .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink2)}
+.duo .tr{position:relative;height:22px}
+.duo .ln{position:absolute;top:50%;height:2px;margin-top:-1px;background:var(--mid)}
+.duo .dot{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--paper)}
+.duo .v{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:11px;color:var(--ink2);white-space:nowrap}
+.d22{background:var(--gray-bar)}.diz{background:var(--accent)}.dca{background:var(--ca)}
+#gmap svg{width:100%;height:auto;display:block}
+#gmap circle{cursor:pointer}#gmap .ponto{stroke:var(--paper);stroke-width:1.2;fill-opacity:.9}
+#gmap circle:hover{stroke:var(--ink);stroke-width:2}
+#gmap .bl{font-family:var(--mono);font-size:10.5px;font-weight:500;fill:var(--ink2);letter-spacing:.04em;paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+@media (max-width:560px){.duo{grid-template-columns:84px 1fr 1fr;gap:4px 8px}.duo .tr{height:34px}.duo .ln,.duo .dot{top:10px}.duo .v{top:auto;bottom:0;left:0!important;transform:none;font-size:10.5px}}
+details summary{cursor:pointer;color:var(--accent-ink);font-weight:500;font-size:14px}
+details[open] summary{margin-bottom:12px}
+.cut{border-top:2px dashed var(--down);margin:6px 0 4px;position:relative}
+.cut span{position:absolute;right:0;top:-10px;background:var(--paper);padding:0 6px;font-size:11.5px;color:var(--down);font-family:var(--mono)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;background:var(--paper);font-variant-numeric:tabular-nums}
+.chip.me{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:6px}
+footer a{color:var(--accent-ink)}
+@media (max-width:560px){.bar,.axis{grid-template-columns:96px 1fr}.dr{grid-template-columns:96px 1fr 60px}.kpi b{font-size:26px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Eleições 2026 · Pernambuco · Deputada estadual · 1º turno, 04/10</div>
+  <h1>Regina da Saúde <span class="num">20123</span></h1>
+  <p class="lede" id="lede"></p>
+  <p class="warn" id="aviso" hidden></p>
+  <div class="kpis">
+    <div class="kpi"><span>Votos em Pernambuco</span><b id="k1"></b><small id="k1s"></small></div>
+    <div class="kpi"><span>Vieram de Itaíba</span><b id="k2"></b><small id="k2s"></small></div>
+    <div class="kpi"><span>Resultado</span><b id="k3"></b><small id="k3s"></small></div>
+    <div class="kpi"><span>Votos que faltaram</span><b id="k4"></b><small id="k4s"></small></div>
+  </div>
+</header>
+
+<section id="mapa">
+  <div class="sec-head"><div class="eyebrow">1 · Mapa</div><h2>Os votos se concentram no Sertão do Moxotó e no Agreste</h2>
+  <p class="note">Cor pela quantidade de votos em cada município. Passe o mouse ou toque para ver os números. Fernando de Noronha não aparece no mapa.</p></div>
+  <div class="panel">
+    <div class="legend" id="legend"></div>
+    <div id="map"><div class="tip" id="tip"></div></div>
+  </div>
+</section>
+
+<section id="municipios">
+  <div class="sec-head"><div class="eyebrow">2 · Por município</div><h2 id="munTitulo"></h2>
+  <p class="note">Na escala logarítmica cada marca vale 10 vezes a anterior, o que deixa visíveis as cidades com 1 voto. O número ao lado de cada barra é o valor exato, seguido do percentual dos válidos e da posição dela na cidade.</p></div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+    <div class="controls">
+      <div class="seg"><button id="mTop" aria-pressed="true">Top 20</button><button id="mAll" aria-pressed="false"></button></div>
+      <div class="seg"><button id="sLog" aria-pressed="true">Logarítmica</button><button id="sLin" aria-pressed="false">Linear</button></div>
+    </div>
+    <div class="axis" id="munAxis"><span></span><div></div></div>
+    <div class="bars" id="munBars"></div>
+  </div>
+</section>
+
+<section id="forca">
+  <div class="sec-head"><div class="eyebrow">3 · Força nas cidades</div><h2 id="fTitulo"></h2>
+  <p>Posição de Regina entre todos os candidatos a deputado estadual em cada município, e quem disputou a ponta com ela. É a primeira eleição dela para deputada estadual, então não há votação anterior para comparar; a seção 5 mostra de quem eram, em 2022, os votos de Itaíba.</p></div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+    <div class="chips" id="fChips"></div>
+    <p class="note" style="color:var(--ink2);font-size:13.5px">Na coluna "Quem liderou", aparece o mais votado da cidade. Onde ela ficou em 1º, aparece o 2º colocado.</p>
+    <div class="tbl-wrap"><table id="tForca" class="resp"></table></div>
+  </div>
+</section>
+
+<section id="base">
+  <div class="sec-head"><div class="eyebrow">4 · Itaíba</div><h2 id="bTitulo"></h2>
+  <p id="bLede"></p></div>
+  <div class="grid2">
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <h3>Mais votados para deputado estadual em Itaíba</h3>
+      <div class="bars" id="bTop"></div>
+      <p class="note" id="bNote"></p>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <h3>Por bairro ou distrito do local de votação</h3>
+      <div class="bars" id="bBairro"></div>
+      <p class="note">Ao lado de cada barra: votos e o percentual dos válidos. <span id="bMaior"></span></p>
+    </div>
+  </div>
+  <div class="tbl-wrap"><table id="tLoc" class="resp"></table></div>
+</section>
+
+<section id="base2022">
+  <div class="sec-head"><div class="eyebrow">5 · Itaíba, 2022 × 2026</div><h2>Regina ocupou o espaço que era de Rodrigo Novaes</h2>
+  <p id="b2Lede"></p>
+  <p class="note">Rodrigo Novaes não disputou a eleição de 2026. Claudiano Filho disputou deputado estadual nas duas. Todos os percentuais são sobre os votos válidos para deputado estadual no local, em cada ano.</p></div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+    <h3>Mapa dos locais de votação</h3>
+    <div class="controls"><div class="seg"><button id="gmR" aria-pressed="true">Regina em 2026</button><button id="gmN" aria-pressed="false">Rodrigo Novaes em 2022</button></div></div>
+    <p id="gmExp" style="font-size:14px;color:var(--ink2)"></p>
+    <div class="legend" id="gmLeg"></div>
+    <div id="gmap" style="position:relative"><div class="tip" id="gtip"></div></div>
+    <p class="note">Sem ruas ao fundo; cada círculo está na posição do local informada pelo TSE. Os dois modos usam a mesma escala de tamanho, para dar para comparar.</p>
+  </div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+    <h3>Percentual dos válidos por bairro ou distrito</h3>
+    <div class="legend"><span><i style="background:var(--gray-bar);border-radius:50%"></i>2022</span><span><i style="background:var(--accent);border-radius:50%"></i>2026</span><span>Números: % em 2022 → % em 2026</span></div>
+    <div class="duo" id="b2Bairros"></div>
+  </div>
+  <h3>Por local de votação</h3>
+  <p class="note" style="color:var(--ink2);font-size:13.5px">Como ler: "44,9% → 55,5%" quer dizer que, de cada 100 votos válidos para deputado estadual naquele local, cerca de 45 foram para Rodrigo Novaes em 2022 e cerca de 55 para Regina em 2026. Clique nos títulos para reordenar.</p>
+  <div class="tbl-wrap"><table id="tB2" class="resp"></table></div>
+  <p class="note" id="b2Nota"></p>
+</section>
+
+<section id="secoes">
+  <div class="sec-head"><div class="eyebrow">6 · Por seção eleitoral</div><h2 id="secTitulo">Votos em cada seção eleitoral</h2>
+  <p>Algumas seções pequenas não têm urna própria: os eleitores delas votam na urna de outra seção do mesmo local. O resultado sai só na seção que tem a urna, marcada aqui como <b>consolidada</b>, e os eleitores das duas são somados. Exemplo: em Brejão, a seção 452 (63 eleitores) votou na urna da seção 181 (272 eleitores). A linha da 181 mostra 335 eleitores aptos e os votos dos dois grupos juntos; a 452 não tem linha própria.</p></div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+    <div class="controls">
+      <label for="secMun" class="note" style="color:var(--ink2)">Município</label>
+      <select id="secMun" style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);max-width:100%"></select>
+      <input id="secBusca" type="search" placeholder="Buscar local, bairro ou seção" style="font:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);flex:1;min-width:0;max-width:320px">
+      <label class="note" style="display:inline-flex;gap:6px;align-items:center;color:var(--ink2)"><input type="checkbox" id="secCons"> Só consolidadas</label>
+    </div>
+    <p class="note" id="secResumo" style="color:var(--ink2)"></p>
+    <div class="tbl-wrap" id="secWrap"><table id="tSec" class="resp"></table></div>
+    <div class="controls"><button id="secMais" style="font:inherit;font-size:13px;border:1px solid var(--line);background:var(--paper);color:var(--accent-ink);border-radius:8px;padding:6px 12px;cursor:pointer">Mostrar mais</button>
+    <a class="note" href="https://github.com/leonardoanselmo/regina-da-saude-2026/blob/main/dados/regina_da_saude_20123_por_secao.csv" style="color:var(--accent-ink)">Planilha com todas as 21.418 seções de PE (CSV)</a></div>
+  </div>
+</section>
+
+<section id="resultado">
+  <div class="sec-head"><div class="eyebrow">7 · Resultado oficial</div><h2 id="rTitulo"></h2>
+  <p id="rLede"></p></div>
+  <div class="grid2">
+    <div class="panel" style="display:flex;flex-direction:column;gap:6px">
+      <h3>Lista do Podemos (12 mais votados)</h3>
+      <div class="bars" id="pBars"></div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:6px">
+      <h3>Vagas por partido ou federação (49 no total)</h3>
+      <div class="bars" id="seatBars"></div>
+      <p class="note">Resultado proclamado pelo TSE.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div id="fonte"></div>
+  <div>Fontes: <a href="https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pe/pe-c0007-e006259-u.json">API de resultados do TSE</a> (votos por município e resultado oficial), <a href="https://dadosabertos.tse.jus.br/">Portal de Dados Abertos do TSE</a> (votação por seção e locais de votação de 2022 e 2026). Contornos dos municípios: geodata-br (IBGE).</div>
+  <div style="color:var(--ink);font-weight:600;font-size:14px;margin-top:6px">Desenvolvido pelo Engenheiro de IA Léo Ansélmo</div>
+</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const D=/*DATA*/;
+const GEO=/*GEO*/;
+const EU='20123';
+const fmt=n=>Math.round(n).toLocaleString('pt-BR');
+const pct=p=>p.toFixed(2).replace('.',',')+'%';
+const p1=v=>v.toFixed(1).replace('.',',')+'%';
+const title=s=>s.toLowerCase().replace(/(^|\s|-)(\S)/g,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Da|De|Do|Dos|Das|E)\b/g,w=>w.toLowerCase());
+const $=id=>document.getElementById(id);
+const O=D.oficial,TOT=O.ela.v,B=D.base;
+
+/* topo */
+const ita=D.mun.find(m=>m[0]==='ITAÍBA');
+$('lede').textContent='Para onde foram os '+fmt(TOT)+' votos da candidata do Podemos em sua primeira eleição para deputada estadual: cidade por cidade, a base em Itaíba, de quem eram esses votos em 2022 e por quanto a vaga escapou.';
+$('k1').textContent=fmt(TOT);$('k1s').textContent=pct(D.meta.pvap)+' dos válidos · '+D.meta.seq+'º lugar';
+$('k2').textContent=p1(100*ita[1]/TOT);$('k2s').textContent=fmt(ita[1])+' votos, '+pct(ita[2])+' da cidade';
+$('k3').textContent=O.ela.st;$('k3s').textContent=(O.lista.findIndex(c=>c.n===EU)+1-O.lista.filter(c=>c.e).length)+'ª da fila de suplentes do Podemos';
+$('k4').textContent=fmt(O.faltaram);$('k4s').textContent='para passar o último eleito do partido · seção 7';
+if(D.meta.aviso){$('aviso').hidden=false;$('aviso').textContent='Dados do TSE de '+D.meta.dg+' às '+D.meta.hg+'. Aviso do TSE: "'+D.meta.aviso+'".'}
+$('fonte').textContent='Atualizado com dados do TSE de '+D.meta.dg+', '+D.meta.hg+'.';
+
+function bars(el,items,opt={}){
+  const max=opt.max||Math.max(...items.map(i=>i.v));
+  const log=opt.log, lo=0.7;
+  const w=v=>log?Math.max(0,Math.log10(v/lo)/Math.log10(max*1.15/lo))*100:v/max*100*0.8;
+  el.innerHTML=items.map(i=>(i.cut?'<div class="cut"><span>'+i.cut+'</span></div>':'')+
+    '<div class="bar'+(i.hl?' hl':'')+(i.dim?' dim':'')+'" title="'+i.lb+': '+fmt(i.v)+'"><div class="lb">'+i.lb+'</div><div class="tr"><div class="fill" style="width:'+w(i.v).toFixed(2)+'%"></div><div class="v">'+fmt(i.v)+(i.x?' <i>'+i.x+'</i>':'')+'</div></div></div>').join('');
+  return w;
+}
+function table(el,cols,rows,sortIdx,desc=true){
+  let si=sortIdx,sd=desc;
+  function render(){
+    const rs=[...rows].sort((a,b)=>{const x=a[si],y=b[si];return (typeof x==='number'?x-y:String(x).localeCompare(String(y),'pt'))*(sd?-1:1)});
+    el.innerHTML='<thead><tr>'+cols.map((c,i)=>'<th class="'+(c.n?'n':'')+'" aria-sort="'+(i===si?(sd?'descending':'ascending'):'none')+'"><button data-i="'+i+'">'+c.t+'</button></th>').join('')+'</tr></thead><tbody>'+
+      rs.map(r=>'<tr>'+cols.map((c,i)=>'<td data-l="'+c.t+'" class="'+(c.n?'n':'')+(c.w?' w':'')+'">'+(c.f?c.f(r[i],r):r[i])+'</td>').join('')+'</tr>').join('')+'</tbody>';
+    el.querySelectorAll('th button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i===si)sd=!sd;else{si=i;sd=!!cols[i].n}render()});
+  }
+  render();
+}
+
+/* 1 · mapa */
+const bins=[[1,9],[10,99],[100,499],[500,999],[1000,1e9]];
+const binOf=v=>!v?0:bins.findIndex(b=>v>=b[0]&&v<=b[1])+1;
+$('legend').innerHTML='<span><i style="background:var(--m0)"></i>0</span>'+['1–9','10–99','100–499','500–999','1.000+'].map((t,k)=>'<span><i style="background:var(--m'+(k+1)+')"></i>'+t+'</span>').join('');
+(function(){
+  const W=900,H=330;
+  const FEAT=GEO.features.filter(f=>f.properties.id!=='2605459');
+  const proj=d3.geoIdentity().reflectY(true).fitSize([W,H],{type:'FeatureCollection',features:FEAT});
+  const path=d3.geoPath(proj);
+  const svg=d3.select('#map').append('svg').attr('viewBox','0 0 '+W+' '+H).attr('role','img').attr('aria-label','Mapa de Pernambuco com os votos de Regina da Saúde por município');
+  const tip=$('tip');
+  svg.selectAll('path').data(FEAT).join('path').attr('d',path)
+    .attr('class',f=>{const m=D.mapa[f.properties.id];return 'b'+binOf(m?m[1]:0)})
+    .on('mousemove',(e,f)=>{const m=D.mapa[f.properties.id];const r=$('map').getBoundingClientRect();
+      tip.innerHTML='<b>'+f.properties.name+'</b> · '+(m&&m[1]?fmt(m[1])+(m[1]==1?' voto':' votos')+' · '+pct(m[2])+' dos válidos · '+m[3]+'º lugar':'sem votos');
+      tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.style.opacity=1})
+    .on('mouseleave',()=>tip.style.opacity=0);
+})();
+
+/* 2 · municípios */
+$('munTitulo').textContent=D.mun.length+' municípios deram ao menos um voto';
+$('mAll').textContent='Todos com voto ('+D.mun.length+')';
+let mm='top',ml=true;
+function drawMun(){
+  const r=(mm==='top'?D.mun.slice(0,20):D.mun).map(x=>({lb:title(x[0]),v:x[1],x:pct(x[2])+' · '+x[3]+'º',hl:x[0]==='ITAÍBA'}));
+  const max=D.mun[0][1];
+  const w=bars($('munBars'),r,{log:ml,max});
+  const ticks=ml?[1,10,100,1000,max]:[0,2000,4000,6000,8000];
+  $('munAxis').children[1].innerHTML=ticks.map(t=>'<span style="left:'+(t?w(t):0)+'%">'+fmt(t)+'</span>').join('');
+  [['mTop',mm==='top'],['mAll',mm==='all'],['sLog',ml],['sLin',!ml]].forEach(([id,on])=>$(id).setAttribute('aria-pressed',on));
+}
+$('mTop').onclick=()=>{mm='top';drawMun()};$('mAll').onclick=()=>{mm='all';drawMun()};
+$('sLog').onclick=()=>{ml=true;drawMun()};$('sLin').onclick=()=>{ml=false;drawMun()};
+drawMun();
+
+/* 3 · força nas cidades */
+(function(){
+  const M=D.mun,c1=M.filter(m=>m[3]===1).length,c3=M.filter(m=>m[3]<=3).length,c5=M.filter(m=>m[3]<=5).length,c10=M.filter(m=>m[3]<=10).length;
+  $('fTitulo').textContent='Foi a mais votada em '+(c1===1?'1 município':c1+' municípios')+' e ficou entre os 3 primeiros em '+c3;
+  $('fChips').innerHTML=[['1º lugar',c1],['Entre os 3 primeiros',c3],['Entre os 5 primeiros',c5],['Entre os 10 primeiros',c10],['Com ao menos 1 voto',M.length]].map(([t,n])=>'<span class="chip">'+t+': <b>'+n+'</b></span>').join('');
+  table($('tForca'),[{t:'Município',f:title,w:1},{t:'Votos',n:1,f:fmt},{t:'% dos válidos',n:1,f:pct},{t:'Posição',n:1,f:v=>v+'º'},
+    {t:'Quem liderou (ou 2º, se ela foi 1ª)',w:1,f:(v,r)=>title(v)+' <span class="note">('+r[5]+', '+pct(r[6])+')</span>'}],
+    M.slice(0,25).map(m=>[m[0],m[1],m[2],m[3],m[4],m[5],m[6]]),1);
+})();
+
+/* 4 · Itaíba */
+const short=n=>{const p=n.split(' ');const suf=['NETO','FILHO','JUNIOR','JÚNIOR'].includes(p[p.length-1]);return title([p[0]].concat(p.slice(suf?-2:-1)).join(' '))};
+$('bTitulo').textContent='Na base, '+pct(ita[2])+' dos votos'+(B.top[0].v>=2*B.top[1].v?': mais que o dobro do segundo colocado':'');
+$('bLede').textContent='Em Itaíba, Regina teve '+fmt(B.top[0].v)+' votos, '+pct(B.top[0].p)+' dos válidos para deputado estadual. Claudiano Filho (PP), eleito suplente, teve '+pct(B.top[1].p)+'. Dados por seção do TSE ('+B.locais.reduce((s,l)=>s+l.secoes,0)+' seções, '+B.locais.length+' locais de votação).';
+bars($('bTop'),B.top.slice(0,8).map(t=>({lb:short(t.nm)+' '+t.n,v:t.v,x:pct(t.p),hl:t.n===EU,dim:t.n!==EU})));
+$('bNote').textContent='Válidos para deputado estadual na cidade: '+fmt(B.validos)+'. Brancos: '+fmt(B.brancos)+'. Nulos: '+fmt(B.nulos)+'.';
+bars($('bBairro'),B.bairros.map(b=>({lb:title(b[0]),v:b[1],x:pct(b[3])})));
+const hb=[...B.bairros].sort((a,b)=>b[3]-a[3])[0];$('bMaior').textContent='O maior percentual foi em '+title(hb[0])+' ('+pct(hb[3])+').';
+table($('tLoc'),[{t:'Local de votação',f:title,w:1},{t:'Bairro ou distrito',f:title},{t:'Seções',n:1},{t:'Votos Regina',n:1,f:fmt},{t:'Válidos',n:1,f:fmt},{t:'% válidos',n:1,f:pct}],B.locais.map(l=>[l.local,l.bairro,l.secoes,l.votos,l.validos,l.pct]),3);
+
+/* 5 · Itaíba 2022 × 2026 */
+(function(){
+  const X=D.b2,T=X.tot;
+  const pr=100*T['2026'].regina/T['2026'].validos,pn=100*T['2022'].novaes/T['2022'].validos,pc22=100*T['2022'].claudiano22/T['2022'].validos,pc26=100*T['2026'].claudiano26/T['2026'].validos;
+  $('b2Lede').textContent='Em 2022, Rodrigo Novaes teve '+fmt(T['2022'].novaes)+' votos em Itaíba ('+pct(pn)+' dos válidos para deputado estadual). Em 2026, sem Novaes na disputa, Regina teve '+fmt(T['2026'].regina)+' ('+pct(pr)+'). Nos distritos, a fatia dela é praticamente a mesma que ele tinha; no Centro, ela foi além, e a diferença saiu de Claudiano Filho, que caiu de '+pct(pc22)+' para '+pct(pc26)+'.';
+  const Bs=X.bairros;
+  const max=Math.max(...Bs.map(b=>Math.max(b[2],b[4],b[6],b[8])))*1.45;
+  const pos=v=>(v/max*100).toFixed(2)+'%';
+  const cell=(a,b,cls,nm)=>'<div class="tr" title="'+nm+': '+pct(a)+' em 2022, '+pct(b)+' em 2026"><div class="ln" style="left:'+pos(Math.min(a,b))+';width:'+(Math.abs(b-a)/max*100).toFixed(2)+'%"></div><div class="dot d22" style="left:'+pos(a)+'"></div><div class="dot '+cls+'" style="left:'+pos(b)+'"></div><span class="v" style="left:calc('+pos(Math.max(a,b))+' + 9px)">'+p1(a)+' → '+p1(b)+'</span></div>';
+  $('b2Bairros').innerHTML='<div></div><div class="hd">Novaes 2022 → Regina 2026</div><div class="hd">Claudiano Filho</div>'+Bs.map(b=>'<div class="lb">'+title(b[0])+'</div>'+cell(b[4],b[2],'diz','Novaes em 2022 e Regina em 2026, '+title(b[0]))+cell(b[6],b[8],'dca','Claudiano Filho em '+title(b[0]))).join('');
+  const seta=(a,b,cls)=>'<span style="white-space:nowrap">'+a+' → '+(cls?'<b class="'+cls+'">'+b+'</b>':b)+'</span>';
+  table($('tB2'),[
+    {t:'Local de votação',w:1,f:(v,r)=>title(v)+(r[4][10]?'<br><span class="note">em 2022: '+title(r[4][10])+'</span>':'')},
+    {t:'Bairro ou distrito',f:title},
+    {t:'Votos: Novaes 2022 → Regina 2026',n:1,f:(v,r)=>seta(fmt(r[4][4]),fmt(r[4][2]))},
+    {t:'% dos válidos: Novaes 2022 → Regina 2026',n:1,f:(v,r)=>seta(p1(r[4][5]),p1(r[4][3]),'pos')},
+    {t:'Claudiano: % dos válidos',n:1,f:(v,r)=>seta(p1(r[4][7]),p1(r[4][9]),'neg')}],
+    X.locais.map(r=>[r[0],r[1],r[2],r[3],r]),2);
+  $('b2Nota').textContent=X.mudaram['2026'].length?'A tabela junta só locais com o mesmo código nos dois anos. Local novo em 2026, fora da tabela: '+X.mudaram['2026'].map(title).join(', ')+'.':'';
+
+  /* mapa dos locais */
+  const L=B.locais.filter(l=>l.lat).map(l=>({...l,y:+l.lat.replace(',','.'),x:+l.lon.replace(',','.')}));
+  const n22={},pn22={};X.locais.forEach(r=>{n22[r[0]]=r[4];pn22[r[0]]=r[5]});
+  const W=900,H=560,pad=70;
+  const x0=Math.min(...L.map(l=>l.x)),x1=Math.max(...L.map(l=>l.x)),y0=Math.min(...L.map(l=>l.y)),y1=Math.max(...L.map(l=>l.y));
+  const k=Math.min((W-2*pad)/(x1-x0),(H-2*pad)/(y1-y0));
+  const ox=(W-(x1-x0)*k)/2,oy=(H-(y1-y0)*k)/2;
+  const px=l=>ox+(l.x-x0)*k,py=l=>H-(oy+(l.y-y0)*k);
+  const rad=v=>v>0?3+Math.sqrt(v)*0.7:0;
+  let modo='r';
+  const svg=d3.select('#gmap').append('svg').attr('viewBox','0 0 '+W+' '+H).attr('role','img').attr('aria-label','Mapa dos locais de votação de Itaíba');
+  const ord=[...L].sort((a,b)=>Math.max(b.votos,n22[b.local]||0)-Math.max(a.votos,n22[a.local]||0));
+  const circ=svg.append('g').selectAll('circle').data(ord).join('circle').attr('class','ponto').attr('cx',px).attr('cy',py);
+  const grupos={};L.forEach(l=>{(grupos[l.bairro]=grupos[l.bairro]||[]).push(l)});
+  svg.append('g').selectAll('text').data(Object.entries(grupos)).join('text').attr('class','bl').attr('text-anchor','middle')
+    .attr('x',([b,a])=>a.reduce((s,l)=>s+px(l),0)/a.length)
+    .attr('y',([b,a])=>Math.max(14,Math.min(...a.map(py))-rad(Math.max(...a.map(l=>Math.max(l.votos,n22[l.local]||0))))-8))
+    .text(([b])=>title(b).toUpperCase());
+  const tip=$('gtip');
+  circ.on('mousemove',(e,l)=>{const rc=$('gmap').getBoundingClientRect(),a=n22[l.local];
+      tip.innerHTML='<b>'+title(l.local)+'</b><br>'+title(l.bairro)+'<br>Regina 2026: '+fmt(l.votos)+' votos ('+pct(l.pct)+')'+(a===undefined?'<br>Local novo em 2026':'<br>Novaes 2022: '+fmt(a)+' votos ('+pct(pn22[l.local])+')');
+      tip.style.left=(e.clientX-rc.left)+'px';tip.style.top=(e.clientY-rc.top)+'px';tip.style.opacity=1;tip.style.whiteSpace='normal';tip.style.width='240px'})
+    .on('mouseleave',()=>tip.style.opacity=0);
+  function pinta(){
+    const n=modo==='n';
+    circ.attr('r',l=>rad(n?(n22[l.local]||0):l.votos)).style('fill',n?'var(--ca)':'var(--accent)');
+    $('gmR').setAttribute('aria-pressed',!n);$('gmN').setAttribute('aria-pressed',n);
+    $('gmExp').innerHTML=n?'<b>Os votos de Rodrigo Novaes em 2022.</b> Cada círculo é um local de votação; o tamanho mostra quantos votos ele teve ali. Alterne com "Regina em 2026" para ver que os círculos ficam nos mesmos lugares, com tamanho parecido ou maior.'
+      :'<b>Os votos de Regina em 2026.</b> Cada círculo é um local de votação; o tamanho mostra quantos votos ela teve ali.';
+    $('gmLeg').innerHTML='<span><i style="background:var(--'+(n?'ca':'accent')+');border-radius:50%"></i>'+(n?'Rodrigo Novaes, 2022':'Regina da Saúde, 2026')+'</span><span>Tamanho: votos no local</span>';
+  }
+  $('gmR').onclick=()=>{modo='r';pinta()};$('gmN').onclick=()=>{modo='n';pinta()};pinta();
+})();
+
+/* 6 · seções */
+(function(){
+  const S=D.secoes, mun=[...new Set(S.map(s=>s[0]))].sort((a,b)=>a.localeCompare(b,'pt'));
+  const sel=$('secMun');
+  sel.innerHTML='<option value="">Todos ('+S.length+' seções com voto)</option>'+mun.map(m=>'<option value="'+m+'">'+title(m)+' ('+S.filter(s=>s[0]===m).length+')</option>').join('');
+  sel.value='ITAÍBA';
+  const nCons=S.filter(s=>s[9]).length;
+  $('secTitulo').textContent='Regina teve voto em '+fmt(S.length)+' seções eleitorais; '+nCons+' delas são consolidadas';
+  const cols=[{t:'Município',f:title,w:1},{t:'Zona',n:1},{t:'Seção',n:1},{t:'Local de votação',f:title,w:1},{t:'Bairro',f:title},{t:'Aptos',n:1,f:fmt},{t:'Votos',n:1,f:fmt},{t:'Válidos',n:1,f:fmt},{t:'%',n:1,f:pct},{t:'Situação',w:1,f:v=>v?'<span class="chip" title="Inclui os eleitores das seções agregadas '+v+'">consolidada ('+v.split(' ').join(', ')+')</span>':'<span class="note">própria</span>'}];
+  let lim=100,si=6,sd=true;
+  function rows(){
+    const m=sel.value,q=$('secBusca').value.trim().toLowerCase(),c=$('secCons').checked;
+    return S.filter(s=>(!m||s[0]===m)&&(!c||s[9])&&(!q||(s[3]+' '+s[4]+' '+s[2]+' '+s[0]).toLowerCase().includes(q)));
+  }
+  function render(){
+    const r=rows().sort((a,b)=>{const x=a[si],y=b[si];return (typeof x==='number'?x-y:String(x).localeCompare(String(y),'pt'))*(sd?-1:1)});
+    const tot=r.reduce((s,x)=>s+x[6],0);
+    $('secResumo').textContent=fmt(r.length)+' seções · '+fmt(tot)+(tot===1?' voto':' votos')+(r.length>lim?' · mostrando as primeiras '+lim:'');
+    $('tSec').innerHTML='<thead><tr>'+cols.map((c,i)=>'<th class="'+(c.n?'n':'')+'" aria-sort="'+(i===si?(sd?'descending':'ascending'):'none')+'"><button data-i="'+i+'">'+c.t+'</button></th>').join('')+'</tr></thead><tbody>'+
+      r.slice(0,lim).map(s=>'<tr>'+cols.map((c,i)=>'<td data-l="'+c.t+'" class="'+(c.n?'n':'')+(c.w?' w':'')+'">'+(c.f?c.f(s[i]):s[i])+'</td>').join('')+'</tr>').join('')+'</tbody>';
+    $('tSec').querySelectorAll('th button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i===si)sd=!sd;else{si=i;sd=!!cols[i].n}render()});
+    $('secMais').hidden=r.length<=lim;
+  }
+  sel.onchange=()=>{lim=100;render()};$('secBusca').oninput=()=>{lim=100;render()};$('secCons').onchange=()=>{lim=100;render()};
+  $('secMais').onclick=()=>{lim+=200;render()};
+  render();
+})();
+
+/* 7 · resultado oficial */
+(function(){
+  const P=O.lista,ne=P.filter(c=>c.e).length,pos=P.findIndex(c=>c.n===EU)+1;
+  $('rTitulo').textContent=(pos-ne)+'ª suplente do Podemos: a vaga escapou por '+fmt(O.faltaram)+' votos';
+  $('rLede').textContent='O Podemos elegeu '+ne+' deputados estaduais. Regina foi a '+pos+'ª mais votada do partido, com '+fmt(O.ela.v)+' votos. O último eleito, '+title(O.ultimo.nm)+', teve '+fmt(O.ultimo.v)+'. Com '+fmt(O.faltaram)+' votos a mais ela teria passado à frente dele. Pelas regras do sistema proporcional, as vagas são primeiro divididas entre os partidos e depois preenchidas pelos mais votados de cada um; como '+(pos-ne)+'ª suplente, ela é '+(pos-ne===1?'a primeira chamada':'chamada na ordem da fila')+' se um eleito do Podemos deixar o cargo.';
+  bars($('pBars'),P.map((c,i)=>({lb:(i+1)+'. '+title(c.nm),v:c.v,x:c.st,hl:c.n===EU,dim:c.n!==EU&&!c.e,cut:i===ne?'linha de corte: '+ne+' vagas do Podemos':''})));
+  bars($('seatBars'),O.vagas.map(s=>({lb:s.nm,v:s.v,x:s.s+(s.s>1?' vagas':' vaga'),hl:s.nm==='PODE',dim:s.nm!=='PODE'})));
+})();
+</script>

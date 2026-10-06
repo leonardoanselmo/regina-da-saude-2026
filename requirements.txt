@@ -1,0 +1,3 @@
+# Necessário só para gerar o PDF (passo 7). Os passos 1 a 6 usam apenas a biblioteca padrão do Python.
+reportlab>=4.0
+pillow>=10.0

@@ -1,0 +1,4 @@
+brutos/
+__pycache__/
+.venv/
+*.part
