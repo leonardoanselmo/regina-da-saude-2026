@@ -104,7 +104,7 @@ table.resp{min-width:0;font-size:12.5px}
   table.resp,.resp tbody,.resp tr,.resp td{display:block;width:100%}
   .resp tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px 12px;padding:10px 12px;border-bottom:1px solid var(--line)}
   .resp td span{white-space:normal!important}
-  .resp td{border:0;padding:0;text-align:left!important;white-space:normal}
+  .resp td,.resp td.n{border:0;padding:0;text-align:left!important;white-space:normal}
   .resp td::before{content:attr(data-l);display:block;font-family:var(--body);font-size:11px;color:var(--muted)}
   .resp td.w{grid-column:1/-1}
 }
@@ -286,7 +286,7 @@ $('fonte').textContent='Atualizado com dados do TSE de '+D.meta.dg+', '+D.meta.h
 function bars(el,items,opt={}){
   const max=opt.max||Math.max(...items.map(i=>i.v));
   const log=opt.log, lo=0.7;
-  const w=v=>log?Math.max(0,Math.log10(v/lo)/Math.log10(max*1.15/lo))*100:v/max*100*0.8;
+  const w=v=>log?Math.max(0,Math.log10(v/lo)/Math.log10(max*1.15/lo))*100:v/max*100*(opt.k||0.8);
   el.innerHTML=items.map(i=>(i.cut?'<div class="cut"><span>'+i.cut+'</span></div>':'')+
     '<div class="bar'+(i.hl?' hl':'')+(i.dim?' dim':'')+'" title="'+i.lb+': '+fmt(i.v)+'"><div class="lb">'+i.lb+'</div><div class="tr"><div class="fill" style="width:'+w(i.v).toFixed(2)+'%"></div><div class="v">'+fmt(i.v)+(i.x?' <i>'+i.x+'</i>':'')+'</div></div></div>').join('');
   return w;
@@ -444,7 +444,7 @@ table($('tLoc'),[{t:'Local de votação',f:title,w:1},{t:'Bairro ou distrito',f:
   const P=O.lista,ne=P.filter(c=>c.e).length,pos=P.findIndex(c=>c.n===EU)+1;
   $('rTitulo').textContent=(pos-ne)+'ª suplente do Podemos: a vaga escapou por '+fmt(O.faltaram)+' votos';
   $('rLede').textContent='O Podemos elegeu '+ne+' deputados estaduais. Regina foi a '+pos+'ª mais votada do partido, com '+fmt(O.ela.v)+' votos. O último eleito, '+title(O.ultimo.nm)+', teve '+fmt(O.ultimo.v)+'. Com '+fmt(O.faltaram)+' votos a mais ela teria passado à frente dele. Pelas regras do sistema proporcional, as vagas são primeiro divididas entre os partidos e depois preenchidas pelos mais votados de cada um; como '+(pos-ne)+'ª suplente, ela é '+(pos-ne===1?'a primeira chamada':'chamada na ordem da fila')+' se um eleito do Podemos deixar o cargo.';
-  bars($('pBars'),P.map((c,i)=>({lb:(i+1)+'. '+title(c.nm),v:c.v,x:c.st,hl:c.n===EU,dim:c.n!==EU&&!c.e,cut:i===ne?'linha de corte: '+ne+' vagas do Podemos':''})));
+  bars($('pBars'),P.map((c,i)=>({lb:(i+1)+'. '+title(c.nm),v:c.v,x:c.st,hl:c.n===EU,dim:c.n!==EU&&!c.e,cut:i===ne?'linha de corte: '+ne+' vagas do Podemos':''})),{k:innerWidth<480?0.4:0.7});
   bars($('seatBars'),O.vagas.map(s=>({lb:s.nm,v:s.v,x:s.s+(s.s>1?' vagas':' vaga'),hl:s.nm==='PODE',dim:s.nm!=='PODE'})));
 })();
 </script>
