@@ -79,4 +79,14 @@ As dicas ao passar o mouse no PDF aparecem no Adobe Acrobat Reader e no Firefox.
 
 ---
 
-Desenvolvido pelo Engenheiro de IA Léo Ansélmo
+## Quem desenvolveu?
+
+<img src="img/leo.jpg" alt="Foto de Léo Ansélmo" width="96" align="left">
+
+**Léo Ansélmo** — Bacharelado em Administração e Desenvolvimento de Sistemas, com mais de 20 anos de experiência na área.
+
+Procurei desenvolver um relatório baseado nos dados do TSE, mostrando o panorama político do candidato para o mesmo entender os dados consolidados e gerar conhecimento agregado da campanha atual.
+
+Com ajuda da inteligência artificial (AI) nos mapas e gráficos, obtendo uma compreensão visual mais detalhada.
+
+Instagram: [@leonardoanselmo79](https://www.instagram.com/leonardoanselmo79/)

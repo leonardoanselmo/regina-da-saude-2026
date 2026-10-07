@@ -156,6 +156,40 @@ def bars(x, y, w, items, row=12, lw=110, vmax=None, log=False, vw=70, fs=8):
         y -= row
     return y
 
+# ---------- rodapé do autor ----------
+FOTO = RAIZ / 'img' / 'leo.jpg'
+def autor(y):
+    """Cartão "Quem desenvolveu?" com foto redonda; abre página nova se não couber."""
+    larg = CW - 132
+    cargo = simpleSplit('Bacharelado em Administração e Desenvolvimento de Sistemas, com mais de 20 anos de experiência na área.', 'SB', 8.8, larg)
+    p1 = simpleSplit('Procurei desenvolver um relatório baseado nos dados do TSE, mostrando o panorama político do candidato para o mesmo entender os dados consolidados e gerar conhecimento agregado da campanha atual.', 'R', 8.8, larg)
+    p2 = simpleSplit('Com ajuda da inteligência artificial (AI) nos mapas e gráficos, obtendo uma compreensão visual mais detalhada.', 'R', 8.8, larg)
+    alt = 34 + 22 + len(cargo) * 12 + 6 + (len(p1) + len(p2)) * 12.5 + 6 + 8 + 26
+    if y - alt < 50:
+        footer(); c.showPage(); y = H - 50
+        y = head(y, 'Sobre o relatório', 'Quem desenvolveu este relatório') - 6
+    topo = y; base = y - alt
+    c.setStrokeColor(LINE); c.setFillColor(HexColor('#ffffff')); c.setLineWidth(0.8); c.roundRect(M, base, CW, alt, 10, fill=1, stroke=1)
+    cx, cy, r = M + 62, topo - 64, 44
+    c.setFillColor(ACCS); c.circle(cx, cy, r + 4, fill=1, stroke=0)
+    c.saveState(); p = c.beginPath(); p.circle(cx, cy, r); c.clipPath(p, stroke=0, fill=0)
+    c.drawImage(str(FOTO), cx - r, cy - r, 2 * r, 2 * r); c.restoreState()
+    x = M + 124; yy = topo - 24
+    text(x, yy, 'QUEM DESENVOLVEU?', 'SB', 7.5, ACC); yy -= 22
+    text(x, yy, 'Léo Ansélmo', 'B', 16, INK); yy -= 16
+    for l in cargo: text(x, yy, l, 'SB', 8.8, ACC); yy -= 12
+    yy -= 6
+    for l in p1: text(x, yy, l, 'R', 8.8, INK2); yy -= 12.5
+    yy -= 6
+    for l in p2: text(x, yy, l, 'R', 8.8, INK2); yy -= 12.5
+    yy -= 8
+    s = 'Instagram: @leonardoanselmo79'; c.setFont('SB', 8.8); tw = c.stringWidth(s, 'SB', 8.8)
+    c.setStrokeColor(LINE); c.setFillColor(HexColor('#f5f6f3')); c.roundRect(x, yy - 6, tw + 20, 18, 9, fill=1, stroke=1)
+    c.setFillColor(ACC); c.drawString(x + 10, yy, s)
+    c.linkURL('https://www.instagram.com/leonardoanselmo79/', (x, yy - 6, x + tw + 20, yy + 12), relative=0)
+    tip(x, yy - 6, tw + 20, 18, 'Abrir o Instagram de Léo Ansélmo: https://www.instagram.com/leonardoanselmo79/')
+    return base - 10
+
 # ================= PÁGINA 1 =================
 EU = '20123'
 O = D['oficial']; TOT = O['ela']['v']; B = D['base']; X = D['b2']; T = X['tot']
@@ -413,9 +447,7 @@ y = bars(M, y, CW, it, row=14, lw=170, fs=8.5) - 10
 y = text(M, y, 'Resultado proclamado pelo TSE.', 'R', 8, MUTED) - 14
 text(M, y, 'Fontes', 'B', 10); y -= 14
 y = text(M, y, 'API de resultados do TSE (votos por município e resultado oficial, 2026): resultados.tse.jus.br/oficial/ele2026/6259/dados/pe/. Portal de Dados Abertos do TSE (dadosabertos.tse.jus.br): votação por seção e locais de votação de 2022 e 2026. Contornos dos municípios: geodata-br, a partir de malhas do IBGE.', 'R', 8.5, INK2, CW, 12)
-y -= 22
-c.setStrokeColor(LINE); c.setLineWidth(0.8); c.line(M, y + 8, W - M, y + 8)
-text(M, y - 6, 'Desenvolvido pelo Engenheiro de IA Léo Ansélmo', 'SB', 10, INK)
+y = autor(y - 14)
 footer(); c.showPage()
 c.save()
 print('páginas:', PAGE[0], '· campos de dica:', NT[0])
